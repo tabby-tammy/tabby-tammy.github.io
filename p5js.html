@@ -1,4 +1,178 @@
-function setup() {
+<!DOCTYPE html>
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<html>
+<title>Tammy Tran's Portfolio</title>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+<span class="navbar-text">Tabby-Tammy</span>
+
+<ul class="navbar-nav">
+
+<li class="nav-item">
+<a class="nav-link" href="index.html"><button type="button" class="btn btn-info">Home</button></a>
+</li>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><button type="button" class="btn btn-info">Art 15</button></a>
+  <ul class="dropdown-menu  dropdown-menu-end">
+    <li><a class="dropdown-item" href="memes.html">10 Memes</a></li>
+    <li><a class="dropdown-item" href="synthesia.html">Synthesia</a></li>
+	<li><a class="dropdown-item" href="zine.html">Zine Art</a></li>
+    <li><a class="dropdown-item" href="movie.html">Final Animation</a></li>
+  </ul>
+</li>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><button type="button" class="btn btn-info">Art 74</button></a>
+  <ul class="dropdown-menu  dropdown-menu-end">
+    <li><a class="dropdown-item" href="glitch.html">Glitch Art</a></li>
+    <li><a class="dropdown-item" href="meme.html">Meme Mashup</a></li>
+    <li><a class="dropdown-item" href="mc.html">3D Minecraft</a></li>
+	<li><a class="dropdown-item" href="net.html">Net.Art</a></li>
+	<li><a class="dropdown-item" href="p5js.html">Self Portraits</a></li>
+  </ul>
+</li>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><button type="button" class="btn btn-info">HTML</button></a>
+  <ul class="dropdown-menu  dropdown-menu-end">
+    <li><a class="dropdown-item" href="https://tabby-tammy.github.io/firstsite/">First Site</a></li>
+    <li><a class="dropdown-item" href="net.html">Net.Art</a></li>
+    <li><a class="dropdown-item" href="https://tabby-tammy.github.io/artgallery/">Art Gallery</a></li>
+  </ul>
+</li>
+
+</ul>
+
+</nav>
+</div>
+<br>
+<div class="container-fluid">
+<div class="alert alert-info">
+ <center><h1>Tabby-Tammy</h1>
+ <br><h3>Tammy Tran's Portfolio</h3>
+</div>
+<center>
+<div class="row">
+<div class="col-6"><center><b><h1>Draft</h1></b>
+<br><iframe src="selfportraitdraft/index.html" style="border:none;" height="606" width="606" title="Final Portrait"></iframe>
+</center></div>
+<div class="col-6"><center><b><h1>Final</h1></b>
+<br><iframe src="selfportraitfinal/index.html" style="border:none;" height="606" width="606" title="Final Portrait"></iframe>
+</center></div></div></div>
+<center>
+<br>Using the programming language p5.js, I created an vector self-portrait. It was definitely a fun way to experiment! My 
+<br>first attempt was free-handing everything and eyeballing all of the values I needed to create the image. For my real
+<br>attempt, I used inspiration from Seth Tobeck's self-portrait to create my final self-portrait. It is a very different
+<br>style compared to the original draft I had done, but it definitely pushes the limits of the programming language much
+<br>more and is ideally something I am more happier with.
+<br>
+<hr>
+<br>
+<center><h1>Code</h1>
+<div class="row">
+<div class="col-6">
+<pre>function setup() {
+createCanvas(600, 600);
+background(135, 209, 255)
+
+}
+
+
+function draw() {
+  
+  // hood back
+  
+  noStroke();
+fill(107, 56, 224);
+quad(280, 550, 280, 480, 150, 400, 190, 550);
+
+noStroke();
+fill(107, 56, 224);
+quad(130, 550, 120, 490, 170, 400, 200, 550);
+
+// neck
+noStroke();
+  fill(255, 192, 120);
+quad(250, 450, 275, 550, 325, 550, 450, 350);
+
+// back hair
+noStroke();
+  fill(43, 24, 5);
+quad(100, 300, 150, 450, 500, 300, 450, 450);
+
+// head
+noStroke();
+  fill(255, 192, 120);
+ellipse(300, 300, 350, 350);
+
+noStroke();
+  fill(255, 192, 120);
+ellipse(450, 300, 150, 150);
+
+noStroke();
+  fill(255, 192, 120);
+ellipse(150, 300, 150, 150);
+
+// hair
+noStroke();
+  fill(43, 24, 5);
+quad(250, 100, 250, 200, 500, 350, 550, 200);
+
+noStroke();
+  fill(43, 24, 5);
+quad(250, 100, 450, 100, 550, 200, 350, 250);
+
+noStroke();
+  fill(43, 24, 5);
+quad(250, 100, 250, 200, 100, 400, 150, 200);
+
+// eyes
+fill(255);
+ellipse(225, 325, 140, 140);
+
+fill(255);
+ellipse(385, 325, 140, 140);
+
+fill(0);
+arc(225, 325, 140, 140, radians(260), radians(50));
+
+fill(0);
+arc(385, 325, 140, 140, radians(260), radians(50));
+
+// glasses
+strokeWeight(10);
+stroke(107, 56, 224);
+noFill();
+ellipse(225, 325, 140, 140);
+
+strokeWeight(10);
+stroke(107, 56, 224);
+noFill();
+ellipse(385, 325, 140, 140);
+
+strokeWeight(10);
+stroke(107, 56, 224);
+noFill();
+line(300, 325, 310, 325)
+
+// mouth
+stroke(0);
+arc(320, 420, 50, 50,  radians(330), radians(130));
+
+// hood front
+noStroke();
+fill(107, 56, 224);
+quad(310, 550, 340, 480, 450, 400, 440, 550);
+
+noStroke();
+fill(107, 56, 224);
+quad(500, 550, 520, 480, 450, 400, 430, 550);
+}</pre>
+</div>
+<div class="col-6">
+<pre>function setup() {
 createCanvas(600, 600);
 background(135, 209, 255)
 
@@ -655,4 +829,14 @@ function draw() {
   
   endShape(CLOSE);
   
-}
+}</pre>
+</div>
+</div>
+<br>
+<br>
+<div class="bg-dark text-white">
+<center><br>
+Site Coded by Tammy Tran | Created for ART 74  SEC 02
+<br><br>
+</div>
+</html>
